@@ -1,0 +1,37 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage[papersize={14.8cm,10.5cm}, margin=0.5cm, marginratio=1:1]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\quad}{\hspace*{2.5ex}}
+\setlength{\parindent}{0pt}
+
+\input{config}
+
+\newcommand{\CALL}{}
+\newcommand{\VIA}{}
+\newcommand{\DATE}{}
+\newcommand{\TIME}{}
+\newcommand{\BAND}{}
+\newcommand{\MODE}{}
+\newcommand{\RST}{}
+
+\newcommand{\qslcard}[7][]{
+  \renewcommand{\CALL}{#1}
+  \renewcommand{\VIA}{#2}
+  \renewcommand{\DATE}{#3}
+  \renewcommand{\TIME}{#4}
+  \renewcommand{\BAND}{#5}
+  \renewcommand{\MODE}{#6}
+  \renewcommand{\RST}{#7}
+  \include{card}
+  }
+
+\begin{document}
+
+\input{contacts}
+
+\end{document}
