@@ -89,15 +89,19 @@
 
 
 \newcommand{\@qslcardfront}[7][]{
-	\newpage
+	%\newpage
 	%That Hack with the Paperwith .799 is important to get an 
 	% exact number of pics, the front needs to be smaller than 
 	% the paper
-	\includegraphics[width=14.799cm,height=10.5cm]{\@MYPIC}
+	\includegraphics[width=\paperwidth,height=\paperheight]{\@MYPIC}
 }
 
+\newcommand{\@qslcardbothsides}[7][]{
+	\@qslcardfront{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+	\@qslcardback{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+}
 
-\newcommand\qslcard\@qslcardfront
+\newcommand\qslcard\@qslcardbothsides
 
 \DeclareOption{front}{
 	\renewcommand\qslcard\@qslcardfront
