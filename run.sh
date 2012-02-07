@@ -3,6 +3,7 @@ if [ -n "$1" ]
 then 
 	./adif2contacts.pl < $1 > ./contacts.tex
 fi
+xelatex qsl.tex &&
 xelatex qsl-back.tex &&
 xelatex qsl-front.tex &&
 xelatex printA4-front.tex &&
