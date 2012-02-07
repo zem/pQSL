@@ -7,6 +7,7 @@
 %\usepackage{fontspec}
 \usepackage[papersize={14.8cm,10.5cm}, margin=0.0cm, marginratio=1:1]{geometry}
 
+
 \setlength{\parindent}{0cm}
 
 \newcommand\MYPIC[1]{\newcommand{\@MYPIC}{#1}}
@@ -36,6 +37,9 @@
 	\renewcommand{\@MODE}{#6}
 	\renewcommand{\@RST}{#7}
 
+	\ \vspace{0.5cm}
+
+	\hspace{0.5cm}
 	%%%BEGIN left upper Minipage with MYCALL and locator
 	\begin{minipage}{5.2cm}
 	
@@ -49,7 +53,7 @@
 	%%%END left upper Minipage with MYCALL and locator
 	%%% BEGIN Centered upper Minipage with hamorgpic
 	\begin{minipage}{2cm}
-	\centering \includegraphics[width=0.75cm]{\@MYHAMORGPIC}
+	\centering \includegraphics[width=1cm]{\@MYHAMORGPIC}
 
 	\footnotesize \@MYHAMORGNAME
 	\end{minipage}
@@ -62,10 +66,11 @@
 	\framebox[5.5cm][l]{\scriptsize VIA:\hspace{10mm} \vphantom{$\rule[-1mm]{0mm}{6mm}$} \bf \Large{\@VIA}}
 	\end{minipage}
 	%%%END Right upper Minipage with QSO and Via Fields 
+	\hspace{0.5cm}
 
 	\vspace{1.5cm}
 
-	I am pleased to confirm the following QSO:
+	\hspace{0.5cm}I am pleased to confirm the following QSO:
 	\topsep3pt
 	\begin{center}
 	\begin{tabular}{|c|c|c|c|c|c|}
@@ -83,31 +88,32 @@
 
 	\vspace{1cm}
 
-	vy 73 de \makebox[3.5cm]{\dotfill}
+	\hspace{0.5cm}vy 73 de \makebox[3.5cm]{\dotfill}
 }
 
 
 
 \newcommand{\@qslcardfront}[7][]{
-	%\newpage
+	\newpage
 	%That Hack with the Paperwith .799 is important to get an 
 	% exact number of pics, the front needs to be smaller than 
 	% the paper
-	\includegraphics[width=\paperwidth,height=\paperheight]{\@MYPIC}
+	% \paperwidth \paperheight
+	\includegraphics[width=14.799cm,height=10.499cm]{\@MYPIC}
 }
 
 \newcommand{\@qslcardbothsides}[7][]{
-	\@qslcardfront{#1}{#2}{#3}{#4}{#5}{#6}{#7}
-	\@qslcardback{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+	\@qslcardfront[#1]{#2}{#3}{#4}{#5}{#6}{#7}
+	\@qslcardback[#1]{#2}{#3}{#4}{#5}{#6}{#7}
 }
 
 \newcommand\qslcard\@qslcardbothsides
+
 
 \DeclareOption{front}{
 	\renewcommand\qslcard\@qslcardfront
 }
 \DeclareOption{back}{
-	\geometry{margin=0.5cm}
 	\renewcommand\qslcard\@qslcardback
 }
 \ProcessOptions
