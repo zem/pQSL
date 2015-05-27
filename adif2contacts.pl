@@ -47,13 +47,13 @@ while(<STDIN>){
 	$buffer.=$_;
 }
 
-$buffer =~ s/.*?\<(E|e)(O|o)(H|h)\>//g;
-my @records=split(/\<(E|e)(O|o)(R|r)\>/, $buffer);
+$buffer =~ s/(?i).*?\<eoh\>//g;
+my @records=split(/\<(?i)eor\>/, $buffer);
 
 foreach my $rec (@records) {
 	my $qsl_sent=get_field($rec, "QSL_SENT");
 	if ($qsl_sent) { 
-		if ($qsl_sent !~ /^(N|R|Q|n|r|q)$/) { next; } 
+    if ($qsl_sent !~ /(?i)^(Q)$/) { next; } 
 	}
 	my $call=get_field($rec, "CALL"); 
 	if ( ! $call ) { next; } # this check is for empty records
