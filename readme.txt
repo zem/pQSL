@@ -1,5 +1,11 @@
 http://www.fnordpol.de/LaTeX_QSL_2.0.tar.gz
 
+OUTDATED
+
+Wird aktualisiert sobald die grundsätzliche Funktion wieder hergestellt
+ist und alles halbwegs seinen Platz gefunden hat...
+
+
 Zusammenfassung:
 
 - Druck Wahlweise auf A4 zum zerschneiden oder auf Blanko
